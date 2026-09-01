@@ -1,60 +1,98 @@
-## Python standby template
+## Find businesses that actually need what you sell
 
-<!-- This is an Apify template readme -->
+AI Sales Opportunity Finder searches local businesses, visits their websites, and identifies **concrete, evidence-backed sales opportunities**.
 
-Start a new [web scraping](https://apify.com/web-scraping) project quickly and easily in Python with our Standby project template. It provides a basic structure for the [Actor](https://apify.com/actors) with [Apify SDK](https://docs.apify.com/sdk/python/) and allows you to easily add your own functionality.
+Instead of giving you another generic list of companies, it helps answer a much more useful question:
 
-## Included features
+**Which businesses are actually worth contacting, and why?**
 
-- **[Apify SDK](https://docs.apify.com/sdk/python/)** for Python - a toolkit for building Apify [Actors](https://apify.com/actors) and scrapers in Python
+For example, if you sell website redesign services, you can enter:
 
-## Resources
+- Service: Website redesign and conversion optimization
+- Business type: Dentists
+- Location: Berlin, Germany
+- Businesses to scan: 20
 
-- [Actor Standby documentation](https://docs.apify.com/platform/actors/development/programming-interface/standby)
+The Actor discovers businesses, analyzes their public websites, filters weak opportunities, and returns the strongest prospects first.
 
+## What you get
 
-## Getting started
+Each qualifying opportunity can include:
 
-For complete information [see this article](https://docs.apify.com/platform/actors/development#build-actor-at-apify-console). In short, you will:
+- Business name
+- Website
+- Phone
+- Address
+- Google rating
+- Opportunity score
+- Target-market fit score
+- Evidence-based need score
+- Recommended action
+- Concrete problems detected
+- Strongest sales opportunity
+- Suggested sales angle
+- Personalized outreach opener
+- Evidence supporting the analysis
 
-1. Build the Actor
-2. Run the Actor
+## Why this is different
 
-## Pull the Actor for local development
+Most lead generation tools tell you who a company is.
 
-If you would like to develop locally, you can pull the existing Actor from Apify console using Apify CLI:
+This Actor tries to tell you **why the company may need what you sell**.
 
-1. Install `apify-cli`
+The AI is deliberately conservative.
 
-    **Using Homebrew**
+It does not award a high score simply because a company matches your target market. It looks for specific evidence that supports a real sales opportunity.
 
-    ```bash
-    brew install apify-cli
-    ```
+For example, when analyzing businesses for website services, useful evidence could include unfinished website copy, unclear service positioning, weak calls-to-action, or other directly observable content problems.
 
-    **Using NPM**
+If there is not enough evidence, the Actor prefers to skip the business rather than invent a reason to contact it.
 
-    ```bash
-    npm -g install apify-cli
-    ```
+## How it works
 
-2. Pull the Actor by its unique `<ActorId>`, which is one of the following:
-    - unique name of the Actor to pull (e.g. "apify/hello-world")
-    - or ID of the Actor to pull (e.g. "E2jjCZBezvAZnX8Rb")
+1. Enter the service you sell.
+2. Choose a type of business.
+3. Enter a location.
+4. Choose how many businesses to scan.
+5. The Actor discovers local businesses.
+6. Businesses with websites are analyzed by AI.
+7. Weak prospects are filtered out.
+8. Qualifying opportunities are ranked from strongest to weakest.
 
-    You can find both by clicking on the Actor title at the top of the page, which will open a modal containing both Actor unique name and Actor ID.
+## Example use cases
 
-    This command will copy the Actor into the current directory on your local machine.
+### Website agencies
 
-    ```bash
-    apify pull <ActorId>
-    ```
+Find local companies showing evidence that their websites could benefit from conversion optimization, clearer messaging, or content cleanup.
 
-## Documentation reference
+### SEO agencies
 
-To learn more about Apify and Actors, take a look at the following resources:
+Look for businesses whose public website content suggests weak positioning or incomplete optimization.
 
-- [Apify SDK for JavaScript documentation](https://docs.apify.com/sdk/js)
-- [Apify SDK for Python documentation](https://docs.apify.com/sdk/python)
-- [Apify Platform documentation](https://docs.apify.com/platform)
-- [Join our developer community on Discord](https://discord.com/invite/jyEM2PRvMU)
+### Marketing agencies
+
+Research potential clients and create evidence-backed sales angles before outreach.
+
+### Consultants
+
+Identify businesses matching a target niche and prioritize prospects based on observable problems.
+
+## Important limitations
+
+The Actor analyzes publicly available business and website information.
+
+A high score is a research signal, not a guarantee that a business will buy a service.
+
+Website analysis is primarily based on extracted webpage content. The Actor does not claim visual design, mobile performance, page speed, or technical problems unless it has evidence.
+
+Some websites block automated access and may therefore be skipped.
+
+Businesses without a public website are also skipped.
+
+## Output
+
+The default Dataset contains only opportunities that meet the selected minimum score.
+
+Results are sorted from the strongest opportunity to the weakest.
+
+You can export results as JSON, CSV, Excel, or connect the Actor to other Apify workflows and APIs.
