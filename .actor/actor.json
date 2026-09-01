@@ -1,0 +1,15 @@
+{
+    "$schema": "https://apify.com/schemas/v1/actor.ide.json",
+    "actorSpecification": 1,
+    "name": "python-standby",
+    "title": "Actor Standby Python project",
+    "description": "Actor Standby project in Python.",
+    "version": "0.0",
+    "buildTag": "latest",
+    "usesStandbyMode": true,
+    "meta": {
+        "templateId": "python-standby",
+        "generatedBy": "<FILL-IN-MODEL>"
+    },
+    "dockerfile": "../Dockerfile"
+}
