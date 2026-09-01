@@ -1,34 +1,50 @@
 {
-  "title": "AI Prospect Opportunity Finder",
-  "description": "Analyze whether a company is a good sales prospect.",
+  "title": "AI Sales Opportunity Finder",
+  "description": "Find local businesses and use AI to identify which ones show concrete evidence of needing your service.",
   "type": "object",
   "schemaVersion": 1,
   "properties": {
     "service": {
       "title": "What do you sell?",
       "type": "string",
-      "description": "The product or service you want to sell.",
+      "description": "Describe the service you want to sell.",
       "editor": "textfield",
-      "default": "Website redesign"
+      "default": "Website redesign and conversion optimization"
     },
-    "ideal_customer": {
-      "title": "Who is your ideal customer?",
+    "target_business": {
+      "title": "What type of businesses?",
       "type": "string",
-      "description": "Describe the type of company you want as a customer.",
-      "editor": "textarea",
-      "default": "Small businesses whose websites have clear conversion or usability problems"
-    },
-    "url": {
-      "title": "Company website",
-      "type": "string",
-      "description": "Public website to analyze.",
+      "description": "The business category to search for.",
       "editor": "textfield",
-      "default": "https://example.com"
+      "default": "Dentists"
+    },
+    "location": {
+      "title": "Where?",
+      "type": "string",
+      "description": "City, region, or location to search.",
+      "editor": "textfield",
+      "default": "Berlin, Germany"
+    },
+    "candidates_to_scan": {
+      "title": "How many businesses should AI scan?",
+      "type": "integer",
+      "description": "Number of unique business websites to analyze.",
+      "default": 20,
+      "minimum": 1,
+      "maximum": 50
+    },
+    "minimum_score": {
+      "title": "Minimum opportunity score",
+      "type": "integer",
+      "description": "Only return sales opportunities scoring at least this value.",
+      "default": 40,
+      "minimum": 0,
+      "maximum": 100
     }
   },
   "required": [
     "service",
-    "ideal_customer",
-    "url"
+    "target_business",
+    "location"
   ]
 }
