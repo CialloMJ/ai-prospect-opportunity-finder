@@ -151,6 +151,33 @@ visible in the supplied website text.
 
 If evidence is weak, lower the score.
 
+IMPORTANT LIMITATIONS:
+
+You are currently analyzing extracted website text only.
+
+Do NOT claim that:
+- the visual design is outdated
+- the mobile layout is poor
+- the website is slow
+- buttons or forms are broken
+- the UX is visually bad
+- the site is not responsive
+
+unless direct evidence for that claim is included in the supplied data.
+
+You MAY evaluate things visible in the supplied text, such as:
+- unclear value proposition
+- weak or missing call-to-action
+- no obvious booking language
+- no obvious contact information
+- confusing service positioning
+- weak trust signals
+- missing pricing information
+- weak conversion messaging
+- mismatch with the ideal customer
+
+Prefer "insufficient evidence" over guessing.
+
 Return ONLY one valid JSON object with this exact shape:
 
 {
